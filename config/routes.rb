@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :employees, only: [:index, :create, :update, :destroy]
+  get "insights/country", to: "insights#country"
+  get "insights/job_title", to: "insights#job_title"
 end

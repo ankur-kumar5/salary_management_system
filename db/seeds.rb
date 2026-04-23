@@ -1,7 +1,7 @@
 # db/seeds.rb
 
-first_names = File.readlines("first_names.txt").map(&:strip)
-last_names  = File.readlines("last_names.txt").map(&:strip)
+first_names = File.readlines("db/first_names.txt").map(&:strip)
+last_names  = File.readlines("db/last_names.txt").map(&:strip)
 
 countries = ["India", "USA", "UK", "Germany"]
 job_titles = ["Engineer", "Manager", "HR", "Analyst"]
@@ -20,3 +20,4 @@ employees = []
 end
 
 Employee.insert_all(employees) # Fast bulk insert
+Rails.logger.info "Seeded #{employees.size} employees"
